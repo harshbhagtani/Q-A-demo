@@ -1,0 +1,20 @@
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-box {
+  border: 1px solid rgb(217, 205, 236);
+  padding: 15px 10px;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+.welcome-container {
+}
+.form-field {
+  margin: 5px 0px;
+}
+.form-field > label {
+  font-weight: bold;
+  font-size: 13px;
+}
