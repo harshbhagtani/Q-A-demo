@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, DatePicker, Input } from 'antd';
 import './welcome.css';
+import { useNavigate } from 'react-router-dom';
+import { Context } from '../../AppContext';
 
 function WelcomePage() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [date, setDate] = useState('');
+  const navigate = useNavigate();
+
+  const { setDate, setEmail, setName, date, email, name } = useContext(Context);
+
+  console.log(email, name);
 
   const instructions = [
     'Instruction 1',
@@ -66,7 +70,13 @@ function WelcomePage() {
             })}
           </ul>
 
-          <Button type="primary" style={{ marginTop: '15px' }}>
+          <Button
+            type="primary"
+            style={{ marginTop: '15px' }}
+            onClick={() => {
+              navigate('/test');
+            }}
+          >
             Start Test
           </Button>
         </form>
